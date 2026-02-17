@@ -62,18 +62,18 @@ continents
 
     -   Which variable(s) will we use to join the `population` and `continents` data frames?
 
-    Add response here.
+    Country Name/ "Entity"
 
     -   We want to create a new data frame that keeps all rows and columns from `population` and brings in the corresponding information from `continents`. Which join function should we use?
 
-    Add response here.
+    leftjoin())
 
 -   **Demo:** Join the two data frames and name assign the joined data frame to a new data frame `population_continents`.
 
 ```{r}
-#| label: join-population-continents
 
-# add code here
+population_contitent <- population |> left_join(continents, by = join_by(country == entity))
+
 ```
 
 -   **Demo:** Take a look at the newly created `population_continent` data frame. There are some countries that were not in `continents`. First, identify which countries these are (they will have `NA` values for `continent`).
